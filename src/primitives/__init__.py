@@ -1,5 +1,5 @@
 """Fake objects designed with OOP in mind."""
-from _primitives.func import func
+from _primitives.callable import Callable
 
 
-__all__ = ["func"]
+__all__ = ["Callable"]
