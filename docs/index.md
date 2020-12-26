@@ -25,12 +25,11 @@ A line of text explaining snippet below…
 
 ```pycon
 
->>> from primitives import func
+>>> from primitives import Callable
+
+>>> func = Callable()
 
 >>> func()
-Traceback (most recent call last):
-  ...
-_primitives.exceptions.PrimitiveError
 
 ```
 
