@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/proofit404/primitives/compare/1.0.0...1.1.0) (2021-01-02)
+
+### Features
+
+- implement callable return value
+  [#3](https://github.com/proofit404/primitives/issues/3)
+  ([4294426](https://github.com/proofit404/primitives/commit/42944268b9d52a73600a548a3fbf7c551a40afe4))
+
 # 1.0.0 (2020-12-26)
 
 ### Features
