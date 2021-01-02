@@ -11,3 +11,9 @@ def test_empty_callable_object():
     """
     func = Callable()
     assert func() is None
+
+
+def test_callable_object_return_value():
+    """`Callable` object should return value passed to it constructor."""
+    func = Callable("Hello, John")
+    assert func() == "Hello, John"
