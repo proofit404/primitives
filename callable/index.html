@@ -399,6 +399,13 @@ method.</p>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">()</span>
 </code></pre></div>
+<p>A return value passed to <code>Callable</code> constructor will be returned as is when
+you'll call the object.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">()</span>
+<span class="go">1</span>
+</code></pre></div>
                 
               
               
