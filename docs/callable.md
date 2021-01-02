@@ -14,3 +14,15 @@ An empty `Callable` object will just return null value.
 >>> func()
 
 ```
+
+A return value passed to `Callable` constructor will be returned as is when
+you'll call the object.
+
+```pycon
+
+>>> func = Callable(1)
+
+>>> func()
+1
+
+```
