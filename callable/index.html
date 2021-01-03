@@ -406,6 +406,46 @@ you'll call the object.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">()</span>
 <span class="go">1</span>
 </code></pre></div>
+<p>Only one return value could be passed to the <code>Callable</code> object at the
+initialization.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">Callable</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">_primitives.exceptions.PrimitiveError</span>: <span class="n">&#39;Callable&#39; object should have only one return value</span>
+</code></pre></div>
+<p>To make your fake object be able to accept positional arguments, you can pass
+<code>Argument</code> object at the initialization. An <code>Argument</code> object should have
+allowed value for this argument to call.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">primitives</span> <span class="kn">import</span> <span class="n">Argument</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Argument</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">_primitives.exceptions.PrimitiveError</span>: <span class="n">Called with argument &#39;b&#39; while expected &#39;a&#39;</span>
+</code></pre></div>
+<p>If you want your callable fake object to receive arguments but return null, you
+can avoid specifying return value explicitly.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">(</span><span class="n">Argument</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="n">Argument</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>A <code>Callable</code> fake object would as well check if amount of passed arguments
+matched arity of declared function.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">_primitives.exceptions.PrimitiveError</span>: <span class="n">Called with less arguments than expected</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">_primitives.exceptions.PrimitiveError</span>: <span class="n">Called with more arguments than expected</span>
+</code></pre></div>
                 
               
               
