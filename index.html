@@ -12,7 +12,7 @@
       
       
       <link rel="shortcut icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -20,10 +20,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.15aa0b43.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.75751829.min.css">
         
           
           
@@ -498,15 +498,34 @@
 <p><strong><a href="https://proofit404.github.io/primitives">Documentation</a> |
 <a href="https://github.com/proofit404/primitives">Source Code</a> |
 <a href="https://github.com/proofit404/primitives/issues">Task Tracker</a></strong></p>
-<p>A paragraph of text explaining the goal of the library…</p>
+<p>Mock objects makes your tests worst. Usage of mock objects is considered an
+anti-pattern by many experienced developers. Mock objects blindly respond to any
+interaction. Patch function is able to put such objects in any place in your
+code. It does not matter if that code was written in a way to be configured or
+not. This situation has several consequences.</p>
+<p>First of all, your tests start making assumptions about implementation of tested
+code. This creates high coupling between tests and code. You no more could
+easily change your code because 25 tests are aware of the name of the function
+in the middle of the call stack.</p>
+<p>The second unpleasant details about mocks is its fragile blind trust to the
+client code. Writing mocks of proper quality is extremely complicated. You need
+a ton of assert statements at the end of the test to check that only expected
+methods were called. In addition API of the mock library in python is an ugly
+procedural code. It requires a 3 lines just to define a dumb method returning
+predefined value on mock. This harms readability of tests dramatically.</p>
+<p>I was upset with mock library for the long time. I decided to design a
+collection of strict composable objects without ability to put them at random
+place in code. Here is what I came with!</p>
 <h2 id="pros">Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h2>
 <ul>
-<li>A feature</li>
-<li>B feature</li>
-<li>etc</li>
+<li>Fake objects with strict behavior will highlight problems in your code earlier</li>
+<li>Nice composable API makes definition of complex objects short and concrete</li>
+<li>Force user to use composition instead of patch</li>
 </ul>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>A line of text explaining snippet below…</p>
+<p>The <code>primitives</code> library gives you a collection of objects with ability to
+define expected behavior as set of short expressions. For example, you could
+define a function returning <code>None</code> like this:</p>
 <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">primitives</span> <span class="kn">import</span> <span class="n">Callable</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">()</span>
@@ -582,8 +601,8 @@ interested in it.</p>
       
     </div>
     
-      <script src="assets/javascripts/vendor.08c56446.min.js"></script>
-      <script src="assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
