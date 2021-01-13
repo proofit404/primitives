@@ -11,17 +11,39 @@ Fake objects designed with OOP in mind.
 [Source Code](https://github.com/proofit404/primitives) |
 [Task Tracker](https://github.com/proofit404/primitives/issues)**
 
-A paragraph of text explaining the goal of the library…
+Mock objects makes your tests worst. Usage of mock objects is considered an
+anti-pattern by many experienced developers. Mock objects blindly respond to any
+interaction. Patch function is able to put such objects in any place in your
+code. It does not matter if that code was written in a way to be configured or
+not. This situation has several consequences.
+
+First of all, your tests start making assumptions about implementation of tested
+code. This creates high coupling between tests and code. You no more could
+easily change your code because 25 tests are aware of the name of the function
+in the middle of the call stack.
+
+The second unpleasant details about mocks is its fragile blind trust to the
+client code. Writing mocks of proper quality is extremely complicated. You need
+a ton of assert statements at the end of the test to check that only expected
+methods were called. In addition API of the mock library in python is an ugly
+procedural code. It requires a 3 lines just to define a dumb method returning
+predefined value on mock. This harms readability of tests dramatically.
+
+I was upset with mock library for the long time. I decided to design a
+collection of strict composable objects without ability to put them at random
+place in code. Here is what I came with!
 
 ## Pros
 
-- A feature
-- B feature
-- etc
+- Fake objects with strict behavior will highlight problems in your code earlier
+- Nice composable API makes definition of complex objects short and concrete
+- Force user to use composition instead of patch
 
 ## Example
 
-A line of text explaining snippet below…
+The `primitives` library gives you a collection of objects with ability to
+define expected behavior as set of short expressions. For example, you could
+define a function returning `None` like this:
 
 ```pycon
 
