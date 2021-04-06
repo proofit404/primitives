@@ -1,7 +1,7 @@
 # Primitives
 
-[![azure-devops-builds](https://img.shields.io/azure-devops/build/proofit404/primitives/5?style=flat-square)](https://dev.azure.com/proofit404/primitives/_build/latest?definitionId=5&branchName=master)
-[![azure-devops-coverage](https://img.shields.io/azure-devops/coverage/proofit404/primitives/5?style=flat-square)](https://dev.azure.com/proofit404/primitives/_build/latest?definitionId=5&branchName=master)
+[![azure-devops-builds](https://img.shields.io/azure-devops/build/proofit404/primitives/18?style=flat-square)](https://dev.azure.com/proofit404/primitives/_build/latest?definitionId=18&branchName=master)
+[![azure-devops-coverage](https://img.shields.io/azure-devops/coverage/proofit404/primitives/18?style=flat-square)](https://dev.azure.com/proofit404/primitives/_build/latest?definitionId=18&branchName=master)
 [![pypi](https://img.shields.io/pypi/v/primitives?style=flat-square)](https://pypi.org/project/primitives)
 [![python](https://img.shields.io/pypi/pyversions/primitives?style=flat-square)](https://pypi.org/project/primitives)
 
