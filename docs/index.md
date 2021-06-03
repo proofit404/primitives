@@ -77,5 +77,5 @@ interested in it.
 
 `primitives` library is offered under the two clause BSD license.
 
-<p align="center">&mdash; ⭐️ &mdash;</p>
-<p align="center"><i>The `primitives` library is part of the SOLID python family.</i></p>
+<p align="center">&mdash; ⭐ &mdash;</p>
+<p align="center"><i>The <code>primitives</code> library is part of the SOLID python family.</i></p>

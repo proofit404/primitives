@@ -1,13 +1,12 @@
 {
   "template": "https://github.com/proofit404/python-library-template",
-  "commit": "da847ad6c9ab570eaeb8a6729a79b51c4c99d64d",
+  "commit": "36fa85bee196f541970a154c3d04e6ffea841087",
   "context": {
     "cookiecutter": {
       "project_name": "primitives",
       "public_module_name": "primitives",
       "private_module_name": "_primitives",
       "exception_name": "PrimitiveError",
-      "project_version": "0.2.0dev1",
       "project_description": "Fake objects designed with OOP in mind.",
       "author_name": "Artem Malyshev",
       "author_email": "proofit404@gmail.com",
@@ -16,8 +15,15 @@
       "issues_url": "https://github.com/proofit404/primitives/issues",
       "documentation_url": "https://proofit404.github.io/primitives",
       "changelog_url": "https://proofit404.github.io/primitives/changelog",
+      "twitter_url": "https://twitter.com/proofit404",
       "pypi_project": "https://pypi.org/project/primitives",
       "azure_definition_id": "18",
+      "azure_build_url": "https://dev.azure.com/proofit404/primitives/_build/latest?definitionId=18&branchName=master",
+      "azure_build_badge_url": "https://img.shields.io/azure-devops/build/proofit404/primitives/18?style=flat-square",
+      "azure_coverage_url": "https://dev.azure.com/proofit404/primitives/_build/latest?definitionId=18&branchName=master",
+      "azure_coverage_badge_url": "https://img.shields.io/azure-devops/coverage/proofit404/primitives/18?style=flat-square",
+      "pypi_badge_url": "https://img.shields.io/pypi/v/primitives?style=flat-square",
+      "python_version_badge_url": "https://img.shields.io/pypi/pyversions/primitives?style=flat-square",
       "_template": "https://github.com/proofit404/python-library-template"
     }
   },
