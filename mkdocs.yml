@@ -2,6 +2,7 @@
 strict: true
 site_name: primitives
 site_description: Fake objects designed with OOP in mind.
+site_url: https://proofit404.github.io/primitives
 theme:
   name: material
   palette:
