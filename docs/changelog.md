@@ -1,3 +1,10 @@
+# 1.3.0 (2021-08-21)
+
+### Features
+
+- implement awaitable object
+  [#53](https://github.com/proofit404/primitives/issues/53) ec19656
+
 # 1.2.0 (2021-01-03)
 
 ### Features
