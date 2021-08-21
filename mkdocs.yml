@@ -39,3 +39,4 @@ nav:
       - Changelog: changelog.md
   - Usage:
       - Callable: callable.md
+      - Awaitable: awaitable.md
