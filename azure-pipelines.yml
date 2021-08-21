@@ -1,6 +1,16 @@
 ---
 trigger:
-  - master
+  - release
+  - develop
+variables:
+  ${{ if eq(variables['Build.Reason'], 'PullRequest') }}:
+    source_branch_name: $(System.PullRequest.SourceBranch)
+    should_review: true
+    should_deploy: false
+  ${{ if eq(variables['Build.Reason'], 'IndividualCI') }}:
+    source_branch_name: $(Build.SourceBranchName)
+    should_review: false
+    should_deploy: true
 jobs:
   - job: "Test"
     pool:
@@ -24,22 +34,20 @@ jobs:
         displayName: Install PyPy.
       - task: NodeTool@0
         inputs:
-          versionSpec: "12.x"
+          versionSpec: "16.6.2"
         displayName: Install NodeJS.
       - script: |
-          git remote set-branches origin master
-          git fetch --quiet
-          git checkout master --quiet
-          git checkout - --quiet
+          git checkout release
+          git checkout develop
+          git checkout $(source_branch_name)
         displayName: Unshallow commit log.
       - script: pip install --upgrade tox
         displayName: Install Tox.
-      - script: tox -p auto
+      - script: tox
         env:
           CI_PYTEST_FLAGS: >-
             --junitxml=junit-{envname}.xml -o junit_suite_name={envname} -o
             junit_family=xunit2 -o junit_log_passing_tests=true
-          TOX_PARALLEL_NO_SPINNER: 1
         displayName: Run Tox.
       - script: .tox/mutmut/bin/mutmut junitxml > junit-mutmut.xml
         condition: always()
@@ -60,11 +68,11 @@ jobs:
           summaryFileLocation: coverage.xml
         displayName: Publish coverage report.
       - script: |
-          npm install --no-save --no-package-lock danger typescript
-        condition: eq(variables['Build.Reason'], 'PullRequest')
+          npm install --save-dev danger typescript
+        condition: eq(variables['should_review'], 'true')
         displayName: Install Danger.
       - script: npx danger ci
-        condition: eq(variables['Build.Reason'], 'PullRequest')
+        condition: eq(variables['should_review'], 'true')
         env:
           DANGER_FAKE_CI: YEP
           DANGER_TEST_REPO: $(Build.Repository.Name)
@@ -74,8 +82,7 @@ jobs:
   - job: "Deploy"
     dependsOn:
       - "Test"
-    condition: |
-      and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    condition: and(succeeded(), eq(variables['should_deploy'], 'true'))
     steps:
       - task: UsePythonVersion@0
         inputs:
@@ -83,16 +90,14 @@ jobs:
         displayName: Install Python.
       - task: NodeTool@0
         inputs:
-          versionSpec: "12.x"
+          versionSpec: "16.6.2"
         displayName: Install NodeJS.
       - script: |
           git config --local user.name "Artem Malyshev"
           git config --local user.email "proofit404@gmail.com"
-        displayName: Tweak git settings.
-      - script: |
-          git remote set-branches origin master
-          git fetch --quiet
-          git checkout master --quiet
+          git checkout release
+          git checkout develop
+          git checkout $(source_branch_name)
         displayName: Unshallow commit log.
       - script: pip install --upgrade tox
         displayName: Install Tox.
@@ -102,9 +107,8 @@ jobs:
           echo '##vso[task.prependpath]$(HOME)/.poetry/bin'
         displayName: Install Poetry.
       - script: >-
-          npm install --no-save --no-package-lock semantic-release
-          @semantic-release/changelog @semantic-release/exec
-          @semantic-release/git
+          npm install --save-dev semantic-release @semantic-release/changelog
+          @semantic-release/exec @semantic-release/git
         displayName: Install Semantic Release.
       - script: |
           npx semantic-release
@@ -119,4 +123,5 @@ jobs:
         env:
           GITHUB_TOKEN: $(SEMANTIC_RELEASE_GITHUB_TOKEN)
           GITHUB_REPOSITORY: $(Build.Repository.Name)
+        condition: eq(variables['source_branch_name'], 'release')
         displayName: Deploy documentation.

@@ -1,9 +1,16 @@
 module.exports = {
   repositoryUrl: "https://github.com/proofit404/primitives",
+  branches: ["release", { name: "develop", prerelease: "rc" }],
   tagFormat: "${version}",
   plugins: [
     "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        linkCompare: false,
+        linkReferences: false,
+      },
+    ],
     [
       "@semantic-release/changelog",
       {
