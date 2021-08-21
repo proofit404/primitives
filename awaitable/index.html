@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://proofit404.github.io/primitives/changelog/">
+        <link rel="canonical" href="https://proofit404.github.io/primitives/awaitable/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
-        <title>Changelog - primitives</title>
+        <title>Awaitable - primitives</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#130-2021-08-21" class="md-skip">
+        <a href="#awaitable" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Changelog
+              Awaitable
             
           </span>
         </div>
@@ -171,15 +171,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link md-tabs__link--active">
+      <a href=".." class="md-tabs__link">
         Home
       </a>
     </li>
@@ -189,13 +187,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../callable/" class="md-tabs__link">
+      <a href="../callable/" class="md-tabs__link md-tabs__link--active">
         Usage
       </a>
     </li>
@@ -252,14 +252,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
       
       <label class="md-nav__link" for="__nav_1">
         Home
@@ -299,51 +297,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Changelog
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
         Changelog
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -360,12 +318,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Usage
@@ -393,11 +353,78 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../awaitable/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Awaitable
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Awaitable
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principles" class="md-nav__link">
+    Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#empty-awaitable-object-returns-none" class="md-nav__link">
+    Empty Awaitable object returns none
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-passed-to-awaitable-object-would-be-returned" class="md-nav__link">
+    Value passed to Awaitable object would be returned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awaitable-object-could-be-returned-by-callable-object" class="md-nav__link">
+    Awaitable object could be returned by Callable object
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -434,9 +461,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
+  <a href="#principles" class="md-nav__link">
+    Principles
   </a>
+  
+    <nav class="md-nav" aria-label="Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#empty-awaitable-object-returns-none" class="md-nav__link">
+    Empty Awaitable object returns none
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-passed-to-awaitable-object-would-be-returned" class="md-nav__link">
+    Value passed to Awaitable object would be returned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awaitable-object-could-be-returned-by-callable-object" class="md-nav__link">
+    Awaitable object could be returned by Callable object
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -453,29 +507,43 @@
               
                 
                 
-                <h1 id="130-2021-08-21">1.3.0 (2021-08-21)<a class="headerlink" href="#130-2021-08-21" title="Permanent link">&para;</a></h1>
-<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
+                <h1 id="awaitable">Awaitable<a class="headerlink" href="#awaitable" title="Permanent link">&para;</a></h1>
+<h2 id="principles">Principles<a class="headerlink" href="#principles" title="Permanent link">&para;</a></h2>
 <ul>
-<li>implement awaitable object
-  <a href="https://github.com/proofit404/primitives/issues/53">#53</a> ec19656</li>
+<li><a href="#empty-awaitable-object-returns-none">Empty <code>Awaitable</code> object returns none</a></li>
+<li><a href="#value-passed-to-awaitable-object-would-be-returned">Value passed to <code>Awaitable</code> object would be returned</a></li>
+<li><a href="#awaitable-object-could-be-returned-by-callable-object"><code>Awaitable</code> object could be returned by <code>Callable</code> object</a></li>
 </ul>
-<h1 id="120-2021-01-03">1.2.0 (2021-01-03)<a class="headerlink" href="#120-2021-01-03" title="Permanent link">&para;</a></h1>
-<h3 id="features_1">Features<a class="headerlink" href="#features_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>implement callable positional argument
-  <a href="https://github.com/proofit404/primitives/issues/4">#4</a></li>
-</ul>
-<h1 id="110-2021-01-02">1.1.0 (2021-01-02)<a class="headerlink" href="#110-2021-01-02" title="Permanent link">&para;</a></h1>
-<h3 id="features_2">Features<a class="headerlink" href="#features_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li>implement callable return value
-  <a href="https://github.com/proofit404/primitives/issues/3">#3</a></li>
-</ul>
-<h1 id="100-2020-12-26">1.0.0 (2020-12-26)<a class="headerlink" href="#100-2020-12-26" title="Permanent link">&para;</a></h1>
-<h3 id="features_3">Features<a class="headerlink" href="#features_3" title="Permanent link">&para;</a></h3>
-<ul>
-<li>empty Callable object <a href="https://github.com/proofit404/primitives/issues/2">#2</a></li>
-</ul>
+<h3 id="empty-awaitable-object-returns-none">Empty <code>Awaitable</code> object returns none<a class="headerlink" href="#empty-awaitable-object-returns-none" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">primitives</span> <span class="kn">import</span> <span class="n">Awaitable</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">awaitable</span> <span class="o">=</span> <span class="n">Awaitable</span><span class="p">()</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">def</span> <span class="nf">check</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">awaitable</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">check</span><span class="p">())</span>
+<span class="go">None</span>
+</code></pre></div>
+<h3 id="value-passed-to-awaitable-object-would-be-returned">Value passed to <code>Awaitable</code> object would be returned<a class="headerlink" href="#value-passed-to-awaitable-object-would-be-returned" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">awaitable</span> <span class="o">=</span> <span class="n">Awaitable</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">check</span><span class="p">())</span>
+<span class="go">1</span>
+</code></pre></div>
+<h3 id="awaitable-object-could-be-returned-by-callable-object"><code>Awaitable</code> object could be returned by <code>Callable</code> object<a class="headerlink" href="#awaitable-object-could-be-returned-by-callable-object" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">primitives</span> <span class="kn">import</span> <span class="n">Callable</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coro</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">(</span><span class="n">Awaitable</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">def</span> <span class="nf">check</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">x</span> <span class="o">=</span> <span class="k">await</span> <span class="n">coro</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">check</span><span class="p">())</span>
+<span class="go">1</span>
+</code></pre></div>
 <p align="center">&mdash; ⭐ &mdash;</p>
 <p align="center"><i>The <code>primitives</code> library is part of the SOLID python family.</i></p>
                 
@@ -497,7 +565,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation" rel="prev">
+        <a href="../callable/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Callable" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -506,26 +574,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Installation
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../callable/" class="md-footer__link md-footer__link--next" aria-label="Next: Callable" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
               Callable
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   
