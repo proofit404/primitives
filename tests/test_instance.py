@@ -22,7 +22,7 @@ def test_instance_method():
     assert user.greet() == "Hello, John"
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_instance_async_method():
     """`Instance` object should give access to async methods."""
     user = Instance(greet=Callable(Awaitable("Hello, John")))

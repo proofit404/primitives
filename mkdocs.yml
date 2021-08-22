@@ -40,3 +40,4 @@ nav:
   - Usage:
       - Callable: callable.md
       - Awaitable: awaitable.md
+      - Instance: instance.md
