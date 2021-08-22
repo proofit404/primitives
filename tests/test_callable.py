@@ -1,4 +1,4 @@
-"""Tests related to `primitives.Callable` function."""
+"""Tests related to `primitives.Callable` object."""
 import pytest
 
 from primitives import Argument
