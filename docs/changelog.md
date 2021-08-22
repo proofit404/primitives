@@ -1,3 +1,10 @@
+# 1.4.0 (2021-08-22)
+
+### Features
+
+- implement instance object
+  [#6](https://github.com/proofit404/primitives/issues/6) 84c2a07
+
 # 1.3.0 (2021-08-21)
 
 ### Features
