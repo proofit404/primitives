@@ -430,6 +430,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="instance/" class="md-nav__link">
+        Instance
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -546,12 +558,26 @@ place in code. Here is what I came with!</p>
 <p>The <code>primitives</code> library gives you a collection of objects with ability to
 define expected behavior as set of short expressions. For example, you could
 define a function returning <code>None</code> like this:</p>
-<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">primitives</span> <span class="kn">import</span> <span class="n">Callable</span>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">primitives</span> <span class="kn">import</span> <span class="n">Instance</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Argument</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">()</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">()</span>
 </code></pre></div>
+<p>Let's try to test a function below using <code>primitives</code> fake objects and standard
+<code>unittest.mock</code> library for comparison.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">greet_many</span><span class="p">(</span><span class="n">repo</span><span class="p">):</span>
+<span class="gp">... </span>   <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">repo</span><span class="o">.</span><span class="n">users</span><span class="p">():</span>
+<span class="gp">... </span>       <span class="nb">print</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">greet</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">greet_many</span><span class="p">(</span><span class="n">Instance</span><span class="p">(</span><span class="n">users</span><span class="o">=</span><span class="n">Callable</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="n">Instance</span><span class="p">(</span><span class="n">greet</span><span class="o">=</span><span class="n">Callable</span><span class="p">(</span><span class="s1">&#39;Hello, John&#39;</span><span class="p">,</span> <span class="n">Argument</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">))),</span>
+<span class="gp">... </span>    <span class="n">Instance</span><span class="p">(</span><span class="n">greet</span><span class="o">=</span><span class="n">Callable</span><span class="p">(</span><span class="s1">&#39;Hello, Kate&#39;</span><span class="p">,</span> <span class="n">Argument</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">))),</span>
+<span class="gp">... </span><span class="p">])))</span>
+<span class="go">Hello, John</span>
+<span class="go">Hello, Kate</span>
+</code></pre></div>
+<p>We would leave <code>unittest.mock</code> implementation to the reader as a homework.</p>
 <h2 id="questions">Questions<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 <p>If you have any questions, feel free to create an issue in our
 <a href="https://github.com/proofit404/primitives/issues">Task Tracker</a>. We have the
