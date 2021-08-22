@@ -16,10 +16,9 @@
 >>> awaitable = Awaitable()
 
 >>> async def check():
-...     print(await awaitable)
+...     return await awaitable
 
 >>> asyncio.run(check())
-None
 
 ```
 
@@ -43,8 +42,7 @@ None
 >>> coro = Callable(Awaitable(1))
 
 >>> async def check():
-...     x = await coro()
-...     print(x)
+...     return await coro()
 
 >>> asyncio.run(check())
 1

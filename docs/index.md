@@ -47,13 +47,33 @@ define a function returning `None` like this:
 
 ```pycon
 
->>> from primitives import Callable
+>>> from primitives import Instance, Callable, Argument
 
 >>> func = Callable()
 
 >>> func()
 
 ```
+
+Let's try to test a function below using `primitives` fake objects and standard
+`unittest.mock` library for comparison.
+
+```pycon
+
+>>> def greet_many(repo):
+...    for user in repo.users():
+...        print(user.greet('Hello'))
+
+>>> greet_many(Instance(users=Callable([
+...     Instance(greet=Callable('Hello, John', Argument('Hello'))),
+...     Instance(greet=Callable('Hello, Kate', Argument('Hello'))),
+... ])))
+Hello, John
+Hello, Kate
+
+```
+
+We would leave `unittest.mock` implementation to the reader as a homework.
 
 ## Questions
 
