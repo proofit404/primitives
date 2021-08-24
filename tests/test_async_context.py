@@ -14,3 +14,11 @@ async def test_async_context_object_return_null():
     async_context = AsyncContext()
     async with async_context as result:
         assert result is None
+
+
+@pytest.mark.asyncio()
+async def test_async_context_object_return_value():
+    """`AsyncContext` object should return value passed to it constructor."""
+    async_context = AsyncContext("Hello, John")
+    async with async_context as result:
+        assert result == "Hello, John"
