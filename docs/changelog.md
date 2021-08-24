@@ -1,3 +1,10 @@
+# 1.6.0 (2021-08-24)
+
+### Features
+
+- async context object value
+  [#60](https://github.com/proofit404/primitives/issues/60) 2ac4c39
+
 # 1.5.0 (2021-08-24)
 
 ### Features
