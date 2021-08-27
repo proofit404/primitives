@@ -14,7 +14,7 @@
         <link rel="canonical" href="https://proofit404.github.io/primitives/callable/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -352,9 +352,87 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Callable
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Callable
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principles" class="md-nav__link">
+    Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#empty-callable-object-returns-none" class="md-nav__link">
+    Empty Callable object returns none
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callable-object-could-return-a-value" class="md-nav__link">
+    Callable object could return a value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callable-object-should-have-one-or-none-return-value" class="md-nav__link">
+    Callable object should have one or none return value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callable-object-could-check-passed-positional-arguments" class="md-nav__link">
+    Callable object could check passed positional arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callable-object-would-check-arity-of-the-call" class="md-nav__link">
+    Callable object would check arity of the call
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callable-object-could-ignore-argument-values" class="md-nav__link">
+    Callable object could ignore argument values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -421,6 +499,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principles" class="md-nav__link">
+    Principles
+  </a>
+  
+    <nav class="md-nav" aria-label="Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#empty-callable-object-returns-none" class="md-nav__link">
+    Empty Callable object returns none
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callable-object-could-return-a-value" class="md-nav__link">
+    Callable object could return a value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callable-object-should-have-one-or-none-return-value" class="md-nav__link">
+    Callable object should have one or none return value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callable-object-could-check-passed-positional-arguments" class="md-nav__link">
+    Callable object could check passed positional arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callable-object-would-check-arity-of-the-call" class="md-nav__link">
+    Callable object would check arity of the call
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callable-object-could-ignore-argument-values" class="md-nav__link">
+    Callable object could ignore argument values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -435,6 +576,16 @@
                 <h1 id="callable">Callable<a class="headerlink" href="#callable" title="Permanent link">&para;</a></h1>
 <p><code>Callable</code> fake object is an easy way to reproduce behavior of a function or a
 method.</p>
+<h2 id="principles">Principles<a class="headerlink" href="#principles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#empty-callable-object-returns-none">Empty <code>Callable</code> object returns none</a></li>
+<li><a href="#callable-object-could-return-a-value"><code>Callable</code> object could return a value</a></li>
+<li><a href="#callable-object-should-have-one-or-none-return-value"><code>Callable</code> object should have one or none return value</a></li>
+<li><a href="#callable-object-could-check-passed-positional-arguments"><code>Callable</code> object could check passed positional arguments</a></li>
+<li><a href="#callable-object-would-check-arity-of-the-call"><code>Callable</code> object would check arity of the call</a></li>
+<li><a href="#callable-object-could-ignore-argument-values"><code>Callable</code> object could ignore argument values</a></li>
+</ul>
+<h3 id="empty-callable-object-returns-none">Empty <code>Callable</code> object returns none<a class="headerlink" href="#empty-callable-object-returns-none" title="Permanent link">&para;</a></h3>
 <p>An empty <code>Callable</code> object will just return null value.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">primitives</span> <span class="kn">import</span> <span class="n">Callable</span>
 
@@ -442,6 +593,7 @@ method.</p>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">()</span>
 </code></pre></div>
+<h3 id="callable-object-could-return-a-value"><code>Callable</code> object could return a value<a class="headerlink" href="#callable-object-could-return-a-value" title="Permanent link">&para;</a></h3>
 <p>A return value passed to <code>Callable</code> constructor will be returned as is when
 you'll call the object.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -449,6 +601,7 @@ you'll call the object.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">()</span>
 <span class="go">1</span>
 </code></pre></div>
+<h3 id="callable-object-should-have-one-or-none-return-value"><code>Callable</code> object should have one or none return value<a class="headerlink" href="#callable-object-should-have-one-or-none-return-value" title="Permanent link">&para;</a></h3>
 <p>Only one return value could be passed to the <code>Callable</code> object at the
 initialization.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">Callable</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -456,6 +609,7 @@ initialization.</p>
   <span class="c">...</span>
 <span class="gr">_primitives.exceptions.PrimitiveError</span>: <span class="n">&#39;Callable&#39; object should have only one return value</span>
 </code></pre></div>
+<h3 id="callable-object-could-check-passed-positional-arguments"><code>Callable</code> object could check passed positional arguments<a class="headerlink" href="#callable-object-could-check-passed-positional-arguments" title="Permanent link">&para;</a></h3>
 <p>To make your fake object be able to accept positional arguments, you can pass
 <code>Argument</code> object at the initialization. An <code>Argument</code> object should have
 allowed value for this argument to call.</p>
@@ -477,6 +631,7 @@ can avoid specifying return value explicitly.</p>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="callable-object-would-check-arity-of-the-call"><code>Callable</code> object would check arity of the call<a class="headerlink" href="#callable-object-would-check-arity-of-the-call" title="Permanent link">&para;</a></h3>
 <p>A <code>Callable</code> fake object would as well check if amount of passed arguments
 matched arity of declared function.</p>
 <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
@@ -485,6 +640,28 @@ matched arity of declared function.</p>
 <span class="gr">_primitives.exceptions.PrimitiveError</span>: <span class="n">Called with less arguments than expected</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">_primitives.exceptions.PrimitiveError</span>: <span class="n">Called with more arguments than expected</span>
+</code></pre></div>
+<h3 id="callable-object-could-ignore-argument-values"><code>Callable</code> object could ignore argument values<a class="headerlink" href="#callable-object-could-ignore-argument-values" title="Permanent link">&para;</a></h3>
+<p>If you would like to check the number of positional arguments passed to the
+faked function, you could use <code>Ignore</code> object as argument value. The same would
+work if you want to check names of keyword arguments passed to the fake function
+without attention to the value of arguments.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">primitives</span> <span class="kn">import</span> <span class="n">Ignore</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Argument</span><span class="p">(</span><span class="n">Ignore</span><span class="p">()))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+</code></pre></div>
+<p>Checks about number of positional arguments and names of keyword arguments would
+still apply.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>
   <span class="c">...</span>
 <span class="gr">_primitives.exceptions.PrimitiveError</span>: <span class="n">Called with more arguments than expected</span>
@@ -561,10 +738,10 @@ matched arity of declared function.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="../javascripts/extra.js"></script>
       
