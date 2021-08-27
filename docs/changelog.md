@@ -1,3 +1,10 @@
+# 1.7.0 (2021-08-27)
+
+### Features
+
+- implement ignore object
+  [#10](https://github.com/proofit404/primitives/issues/10) 389f01a
+
 # 1.6.0 (2021-08-24)
 
 ### Features
