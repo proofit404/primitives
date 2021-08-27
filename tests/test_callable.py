@@ -3,6 +3,7 @@ import pytest
 
 from primitives import Argument
 from primitives import Callable
+from primitives import Ignore
 from primitives.exceptions import PrimitiveError
 
 
@@ -30,7 +31,7 @@ def test_callable_object_misconfigured():
     assert str(exc_info.value) == "'Callable' object should have only one return value"
 
 
-def test_callable_object_null_argument():
+def test_callable_object_null_positional_argument():
     """`Callable` object should return null even if `Argument` was passed."""
     func = Callable(Argument("John"))
     assert func("John") is None
@@ -41,7 +42,14 @@ def test_callable_object_null_argument():
     assert str(exc_info.value) == "Called with argument 'Kate' while expected 'John'"
 
 
-def test_callable_object_return_value_argument():
+def test_callable_object_null_positional_argument_ignore():
+    """Ignore positional argument in callable object without return value."""
+    func = Callable(Argument(Ignore()))
+    assert func("John") is None
+    assert func("Kate") is None
+
+
+def test_callable_object_return_value_positional_argument():
     """`Callable`object should return value even if `Argument` was passed."""
     func = Callable("Hello, John", Argument("John"))
     assert func("John") == "Hello, John"
@@ -50,6 +58,13 @@ def test_callable_object_return_value_argument():
         func("Kate")
 
     assert str(exc_info.value) == "Called with argument 'Kate' while expected 'John'"
+
+
+def test_callable_object_return_value_positional_argument_ignore():
+    """Ignore positional argument in callable object with return value."""
+    func = Callable("Hello, John", Argument(Ignore()))
+    assert func("John") == "Hello, John"
+    assert func("Kate") == "Hello, John"
 
 
 def test_callable_object_positional_argument_prevent_keyword():
