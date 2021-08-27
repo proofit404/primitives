@@ -3,6 +3,17 @@
 `Callable` fake object is an easy way to reproduce behavior of a function or a
 method.
 
+## Principles
+
+- [Empty `Callable` object returns none](#empty-callable-object-returns-none)
+- [`Callable` object could return a value](#callable-object-could-return-a-value)
+- [`Callable` object should have one or none return value](#callable-object-should-have-one-or-none-return-value)
+- [`Callable` object could check passed positional arguments](#callable-object-could-check-passed-positional-arguments)
+- [`Callable` object would check arity of the call](#callable-object-would-check-arity-of-the-call)
+- [`Callable` object could ignore argument values](#callable-object-could-ignore-argument-values)
+
+### Empty `Callable` object returns none
+
 An empty `Callable` object will just return null value.
 
 ```pycon
@@ -14,6 +25,8 @@ An empty `Callable` object will just return null value.
 >>> func()
 
 ```
+
+### `Callable` object could return a value
 
 A return value passed to `Callable` constructor will be returned as is when
 you'll call the object.
@@ -27,6 +40,8 @@ you'll call the object.
 
 ```
 
+### `Callable` object should have one or none return value
+
 Only one return value could be passed to the `Callable` object at the
 initialization.
 
@@ -38,6 +53,8 @@ Traceback (most recent call last):
 _primitives.exceptions.PrimitiveError: 'Callable' object should have only one return value
 
 ```
+
+### `Callable` object could check passed positional arguments
 
 To make your fake object be able to accept positional arguments, you can pass
 `Argument` object at the initialization. An `Argument` object should have
@@ -70,6 +87,8 @@ can avoid specifying return value explicitly.
 
 ```
 
+### `Callable` object would check arity of the call
+
 A `Callable` fake object would as well check if amount of passed arguments
 matched arity of declared function.
 
@@ -79,6 +98,39 @@ matched arity of declared function.
 Traceback (most recent call last):
   ...
 _primitives.exceptions.PrimitiveError: Called with less arguments than expected
+
+>>> func('a', 'b', 'c')
+Traceback (most recent call last):
+  ...
+_primitives.exceptions.PrimitiveError: Called with more arguments than expected
+
+```
+
+### `Callable` object could ignore argument values
+
+If you would like to check the number of positional arguments passed to the
+faked function, you could use `Ignore` object as argument value. The same would
+work if you want to check names of keyword arguments passed to the fake function
+without attention to the value of arguments.
+
+```pycon
+
+>>> from primitives import Ignore
+
+>>> func = Callable(1, Argument(Ignore()))
+
+>>> func('a')
+1
+
+>>> func('b')
+1
+
+```
+
+Checks about number of positional arguments and names of keyword arguments would
+still apply.
+
+```pycon
 
 >>> func('a', 'b', 'c')
 Traceback (most recent call last):
