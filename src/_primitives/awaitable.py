@@ -5,6 +5,6 @@ class Awaitable:
         self.value = value
 
     def __await__(self):
-        if False:  # pragma: no cover
+        if False:  # pragma: no cover, no mutate
             yield
         return self.value
