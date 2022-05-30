@@ -1,6 +1,7 @@
 {
   "template": "https://github.com/proofit404/python-library-template",
-  "commit": "117c1043861330fb6c3048d0d3f220d3c734b8c1",
+  "commit": "805d005efe453acde4b46d88e8296f09dddfcd68",
+  "checkout": null,
   "context": {
     "cookiecutter": {
       "project_name": "primitives",
@@ -17,13 +18,11 @@
       "changelog_url": "https://proofit404.github.io/primitives/changelog",
       "twitter_url": "https://twitter.com/proofit404",
       "pypi_project": "https://pypi.org/project/primitives",
-      "azure_definition_id": "18",
-      "azure_build_url": "https://dev.azure.com/proofit404/primitives/_build/latest?definitionId=18&branchName=master",
-      "azure_build_badge_url": "https://img.shields.io/azure-devops/build/proofit404/primitives/18?style=flat-square",
-      "azure_coverage_url": "https://dev.azure.com/proofit404/primitives/_build/latest?definitionId=18&branchName=master",
-      "azure_coverage_badge_url": "https://img.shields.io/azure-devops/coverage/proofit404/primitives/18?style=flat-square",
+      "github_workflow": "release",
+      "github_workflow_url": "https://github.com/proofit404/primitives/actions/workflows/release.yml?query=branch%3Arelease",
+      "github_workflow_badge_url": "https://img.shields.io/github/workflow/status/proofit404/primitives/release?style=flat-square",
       "pypi_badge_url": "https://img.shields.io/pypi/v/primitives?style=flat-square",
-      "python_version_badge_url": "https://img.shields.io/pypi/pyversions/primitives?style=flat-square",
+      "danger_github_api_token": "Z2hwXzlPQzR5U0dhWmU4RkZ1Vm96YzVJdkY0Z1BxS3YxdjFDZUhsdQo=",
       "_template": "https://github.com/proofit404/python-library-template"
     }
   },

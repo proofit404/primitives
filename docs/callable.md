@@ -140,4 +140,3 @@ _primitives.exceptions.PrimitiveError: Called with more arguments than expected
 ```
 
 <p align="center">&mdash; ⭐ &mdash;</p>
-<p align="center"><i>The <code>primitives</code> library is part of the SOLID python family.</i></p>

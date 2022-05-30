@@ -1,9 +1,4 @@
-# Primitives
-
-[![azure-devops-builds](https://img.shields.io/azure-devops/build/proofit404/primitives/18?style=flat-square)](https://dev.azure.com/proofit404/primitives/_build/latest?definitionId=18&branchName=master)
-[![azure-devops-coverage](https://img.shields.io/azure-devops/coverage/proofit404/primitives/18?style=flat-square)](https://dev.azure.com/proofit404/primitives/_build/latest?definitionId=18&branchName=master)
-[![pypi](https://img.shields.io/pypi/v/primitives?style=flat-square)](https://pypi.org/project/primitives)
-[![python](https://img.shields.io/pypi/pyversions/primitives?style=flat-square)](https://pypi.org/project/primitives)
+# Primitives [![build](https://img.shields.io/github/workflow/status/proofit404/primitives/release?style=flat-square)](https://github.com/proofit404/primitives/actions/workflows/release.yml?query=branch%3Arelease) [![pypi](https://img.shields.io/pypi/v/primitives?style=flat-square)](https://pypi.org/project/primitives)
 
 Fake objects designed with OOP in mind.
 
@@ -98,4 +93,3 @@ interested in it.
 `primitives` library is offered under the two clause BSD license.
 
 <p align="center">&mdash; ⭐ &mdash;</p>
-<p align="center"><i>The <code>primitives</code> library is part of the SOLID python family.</i></p>

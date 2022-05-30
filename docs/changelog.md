@@ -54,4 +54,3 @@
 - empty Callable object [#2](https://github.com/proofit404/primitives/issues/2)
 
 <p align="center">&mdash; ⭐ &mdash;</p>
-<p align="center"><i>The <code>primitives</code> library is part of the SOLID python family.</i></p>
