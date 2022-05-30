@@ -1,5 +1,7 @@
 # Awaitable
 
+`Awaitable` fake object is an easy way to reproduce behavior of a coroutine.
+
 ## Principles
 
 - [Empty `Awaitable` object returns none](#empty-awaitable-object-returns-none)

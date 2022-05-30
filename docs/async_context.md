@@ -1,5 +1,8 @@
 # AsyncContext
 
+`AsyncContext` fake object is an easy way to reproduce behavior of asynchronous
+context managers.
+
 ## Principles
 
 - [Empty `AsyncContext` object returns none](#empty-asynccontext-object-returns-none)
