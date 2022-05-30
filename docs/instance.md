@@ -1,5 +1,8 @@
 # Instance
 
+`Instance` fake object is an easy way to reproduce behavior of any object
+together with its attributes and methods.
+
 ## Principles
 
 - [Empty `Instance` object does not have attributes](#empty-instance-object-does-not-have-attributes)
