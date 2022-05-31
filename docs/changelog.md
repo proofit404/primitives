@@ -1,3 +1,10 @@
+# 1.8.0 (2022-05-31)
+
+### Features
+
+- add empty Class object
+  [#16](https://github.com/proofit404/primitives/issues/16) 84a9a6a
+
 # 1.7.0 (2021-08-27)
 
 ### Features
