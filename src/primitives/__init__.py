@@ -8,7 +8,7 @@ from _primitives.ignore import Ignore
 from _primitives.instance import Instance
 
 
-__all__ = [
+__all__ = (
     "Argument",
     "Awaitable",
     "Callable",
@@ -16,4 +16,4 @@ __all__ = [
     "AsyncContext",
     "Ignore",
     "Class",
-]
+)

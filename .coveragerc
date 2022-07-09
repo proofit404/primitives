@@ -1,12 +1,12 @@
 [run]
 branch = true
 parallel = true
+disable_warnings =
+  module-not-imported
 source =
   _primitives
   primitives
   configuration
-  examples
-  helpers
   mddoctest
   tests
 

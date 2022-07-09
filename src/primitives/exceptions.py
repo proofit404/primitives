@@ -2,4 +2,4 @@
 from _primitives.exceptions import PrimitiveError
 
 
-__all__ = ["PrimitiveError"]
+__all__ = ("PrimitiveError",)
